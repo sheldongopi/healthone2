@@ -1,7 +1,9 @@
 <?php
 namespace App\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
 class ArticleController
 {
     /**
@@ -9,6 +11,7 @@ class ArticleController
      */
     public function homepage()
     {
+
         return new Response('OMG! My first page already! WOOO!');
     }
     /**
@@ -16,9 +19,12 @@ class ArticleController
      */
     public function show($slug)
     {
+
         return new Response(sprintf(
             'Future page to show the article: "%s"',
             $slug
         ));
     }
+
+
 }
