@@ -1,0 +1,25 @@
+{% extends 'default.html.twig' %}
+
+{% block menu %}
+    <li class="nav-item active"><a class="nav-link" href="{{ path('homepage') }}">home</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ path('medicijnen') }}">medicijnen</a></li>
+
+
+    <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+    <h4>HealthOne Medical Website</h4>
+
+    Met deze website kan de dokter zijn recepten uitschrijven en kan de verzekeringsmedewerker de medicijnen bijwerken.
+    Uiteraard allemaal veilig. Wil een medewerker een medicijn aanpassen of toevoegen of verwijderen dan moet hij/zij zich eerst aanmelden.
+    De dokter kan op basis van beschikbare medicijnen een recept uitschrijven, uiteraard ook weer na het aanmelden met een gebruikersnaam en een wachtwoord.
+
+    Omdat de website nog in een testfase zit kan een medewerker zich nu aanmelden met "medewerker1" en "qwerty".
+    De docter meldt zich met "dokter1"en "qwery"
+
+    Uiteraard gaat dit na de testfase veranderen!
+
+{% endblock %}

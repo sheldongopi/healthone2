@@ -1,0 +1,66 @@
+{% extends '../base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="background-color: white">
+        <header>
+            <div class="row" style="margin-top: 20px">
+
+                <div class="d-none d-md-block col-sm-1">
+                    <span class="fas fa-hand-holding-medical" style="font-size:50px; color:red"></span>
+                </div>
+                <div class="col-sm-11">
+                    <h1 >HealthOne <span class="text-danger"> Today</span></h1>
+
+                </div>
+
+            </div>
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="alert alert-danger">
+                    <strong>Fout!</strong> Gebruiker {{ message }}
+                </div>
+            {% endfor %}
+        </header>
+        <nav class="navbar navbar-expand-sm bg-light navbar-light" style="margin-bottom: 0px">
+            <a class="navbar-brand" href="#"><span class="fas fa-hospital"></span> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav">
+                        {% block menu %}
+
+                        {% endblock %}
+
+                    </ul>
+                    <ul class=" navbar-nav ml-auto">
+                        {% block menu_right %}
+                            <li class="nav-item "><a class="nav-link" href="{{ path('app_login') }}">inloggen</a></li>
+                        {% endblock %}
+
+                    </ul>
+                </div>
+
+        </nav>
+        <figure>
+            <img style="margin-bottom: 20px" class="img-fluid" src={{ asset('img/healthone-wide.jpg')}} />
+        </figure>
+        {% block content %}
+        {% endblock %}
+        <hr>
+            <footer>
+
+                <img class="float-right img-thumbnail" width="40"  style="margin-top: -10px;margin-bottom: 10px" src={{ asset('img/linkedin.jpg')}} />
+                <img class="float-right img-thumbnail" width="40"  style="margin-top: -10px;margin-bottom: 10px" src={{ asset('img/tweet.jpg')}} />
+                <img class="float-right img-thumbnail " width="40"  style="margin-top: -10px;margin-bottom: 10px" src={{ asset('img/pinterest.png')}} />
+
+                <p class="text-muted text-center">&copy;afdeling applicatieontwikkelaar Tinwerf 10, 2544 ED Den Haag. Telefoon:088 666 3600 </p>
+            </footer>
+    </div>
+{%  endblock %}
