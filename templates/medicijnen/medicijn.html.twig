@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Werking</th>
+                <th>Bijwerking</th>
+                <th>Prijs</th>
+                <th>Verzekerd</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for medicijn in medicijnen %}
+                <tr>
+                    <td> {{ medicijn.naam }}</td>
+                    <td>{{ medicijn.werking }}</td>
+                    <td>{{ medicijn.bijwerking }}</td>
+                    <td>{{ medicijn.prijs }}</td>
+                    <td>{% if medicijn.verzekerd == 1%}
+                            Verzekerd
+                        {% else %}
+                            Niet Verzekerd
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor%}
+            </tbody>
+        </table>
+
+{% endblock %}
